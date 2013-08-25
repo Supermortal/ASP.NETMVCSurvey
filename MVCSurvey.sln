@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCSurvey.Web", "MVCSurvey.Web\MVCSurvey.Web.csproj", "{39DAA9D8-CF6F-4233-8B3D-FE466C35F21D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCSurvey.Infrastructure", "MVCSurvey.Infrastructure\MVCSurvey.Infrastructure.csproj", "{60639B0A-8399-49B1-8A00-C7301965E4F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39DAA9D8-CF6F-4233-8B3D-FE466C35F21D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39DAA9D8-CF6F-4233-8B3D-FE466C35F21D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39DAA9D8-CF6F-4233-8B3D-FE466C35F21D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39DAA9D8-CF6F-4233-8B3D-FE466C35F21D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60639B0A-8399-49B1-8A00-C7301965E4F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60639B0A-8399-49B1-8A00-C7301965E4F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60639B0A-8399-49B1-8A00-C7301965E4F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60639B0A-8399-49B1-8A00-C7301965E4F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
