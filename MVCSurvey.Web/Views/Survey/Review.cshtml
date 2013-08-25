@@ -1,0 +1,51 @@
+﻿@model MVCSurvey.Infrastructure.Models.Survey.SurveyReviewViewModel
+
+@{
+    ViewBag.Title = "Review";
+}
+
+<div class="survey-content survey-centered">
+    <h1 class="survey-h1">Review - @Model.Survey.Name</h1>
+      
+    <br />
+
+    @foreach (var surveyInstance in Model.Survey.SurveyInstances)
+    {
+        string userName = "NA";
+        if (Model.UserNames.ContainsKey(surveyInstance.UserId))
+        {
+            userName = Model.UserNames[surveyInstance.UserId];
+        }
+
+        <p>
+            <strong>@Html.ActionLink(userName + " - " + surveyInstance.DateTaken, "ReviewInstance", "Survey",
+                                     new
+                                         {
+                                             surveyInstanceId = surveyInstance.SurveyInstanceID,
+                                             userName = userName,
+                                             surveyName = Model.Survey.Name,
+                                             surveyModelId = Model.Survey.SurveyID
+                                         },
+                                     null)
+            </strong>
+            @Html.ActionLink("Delete", "DeleteInstance", "Survey", new { surveyInstanceId = surveyInstance.SurveyInstanceID }, null)
+        </p>
+    }
+    
+    <br />
+    
+    <input type="button" value="Cancel" id="btnSurveyCancel" style="width: 70px"/>
+
+</div>
+
+@section styles {
+    @Styles.Render("~/Content/survey/bundle")
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnSurveyCancel").click(function () {
+            document.location.href = '@Url.Action("Index", "Survey")';
+        });
+    });
+</script>

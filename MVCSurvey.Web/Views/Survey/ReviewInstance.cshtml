@@ -1,0 +1,57 @@
+﻿@model MVCSurvey.Infrastructure.Models.Survey.SurveyInstanceReviewViewModel
+
+@{
+    ViewBag.Title = "Review A Taken Survey";
+}
+
+@Styles.Render("~/Content/Survey/bundle")
+
+<div class="survey-content survey-centered">
+
+    <h3 class="survey-h3"><strong>User: </strong>@Model.UserName</h3>
+    <h3 class="survey-h3"><strong>Survey taken:</strong> @Model.SurveyName</h3>
+    <h3 class="survey-h3"><strong>Date taken: </strong>@Model.SurveyInstance.DateTaken</h3>
+
+    <br />
+    <hr />
+
+    @foreach (var keyValue in @Model.SurveyInstance.KeyValues)
+    {
+        <p class="survey-spaced-bottom"><strong>@keyValue.Key</strong></p>
+        //"Text", "Number", "Decimal Number", "Currency", "Date"
+        switch (keyValue.Type)
+        {
+            case "Text":
+                <p class="survey-p">@keyValue.StringValue</p>
+                break;
+            case "Number":
+                <p class="survey-p">@keyValue.IntValue</p>
+                break;
+            case "Decimal Number":
+                <p class="survey-p">@keyValue.DoubleValue</p>
+                break;
+            case "Currency":
+                <p class="survey-p">$@keyValue.CurrencyValue</p>
+                break;
+            case "Date":
+                <p class="survey-p">@keyValue.DateTimeValue.ToString().Substring(0, keyValue.DateTimeValue.ToString().Length - 12)</p>
+                break;
+        }
+        <br />
+    }
+
+    <input type="button" value="Back" id="btnSurveyCancel"/>
+    
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+}
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#btnSurveyCancel").click(function() {
+            document.location.href = '@Url.Action("Review", "Survey", new { surveyModelId = Model.SurveyModelID }, null)';
+        });
+    });
+</script>

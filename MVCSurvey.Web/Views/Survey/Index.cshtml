@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MVCSurvey.Infrastructure.Models.Survey.SurveyModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@Styles.Render("~/Content/Survey/bundle")
+
+<div class="survey-content">
+
+    <div class="survey-centered">
+        <input type="button" id="btnSurveyAddSurvey" value="Create A Survey" style="width: auto;" />
+    </div>
+    <br />
+
+    <table class="survey-index-table" style="margin: 0 auto;">
+        <tr>
+            <th>Name</th>
+            <th>Date Created</th>
+            <th>Actions</th>
+            <th>Active<br />
+                (click to change)</th>
+        </tr>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>
+                    @m.Name
+                </td>
+                <td>
+                    @m.DateCreated
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", "Survey", new { surveyModelId = m.SurveyID }, null) | 
+                @Html.ActionLink("Edit", "Edit", "Survey", new { surveyModelId = m.SurveyID }, null) | 
+                @Html.ActionLink("Take", "Take", "Survey", new { surveyModelId = m.SurveyID }, null) |
+                @Html.ActionLink("Review", "Review", "Survey", new { surveyModelId = m.SurveyID }, null) |
+                @Html.ActionLink("Review All", "ReviewAllInstances", "Survey", new { surveyModelId = m.SurveyID }, null)
+                </td>
+                <td class="survey-centered">
+                    @if (m.Active)
+                    {
+                        @Html.ActionLink("Active", "Activate", "Survey", new { surveyModelId = m.SurveyID }, null)
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Inactive", "Activate", "Survey", new { surveyModelId = m.SurveyID }, null)
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnSurveyAddSurvey").click(function () {
+            document.location.href = '@Url.Action("Create", "Survey")';
+        });
+    });
+</script>

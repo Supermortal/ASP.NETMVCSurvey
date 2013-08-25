@@ -1,0 +1,75 @@
+﻿@model MVCSurvey.Infrastructure.Models.Survey.SurveyReviewViewModel
+
+@{
+    ViewBag.Title = "Review All Survey Instances";
+}
+
+@Styles.Render("~/Content/Survey/bundle")
+
+<div class="survey-content survey-centered">
+    <h1 class="survey-h1">Review All Survey Instances - @Model.Survey.Name</h1>
+      
+    <br />
+
+    <table class="survey-index-table survey-centered">
+        <tr>
+            @foreach (var surveyParameter in Model.Survey.SurveyParameters)
+            {
+                <th>@surveyParameter.Key</th>
+            }
+            <th>User Name</th>
+            <th>Date Taken</th>
+        </tr>
+        @foreach (var surveyInstance in Model.Survey.SurveyInstances)
+        {
+            string userName = "NA";
+            if (Model.UserNames.ContainsKey(surveyInstance.UserId))
+            {
+                userName = Model.UserNames[surveyInstance.UserId];
+            }
+                
+            <tr>
+                @foreach (var keyValue in surveyInstance.KeyValues)
+                {
+                    switch (keyValue.Type)
+                    {
+                        case "Text":
+                            <td>@keyValue.StringValue</td>
+                            break;
+                        case "Number":
+                            <td>@keyValue.IntValue</td>
+                            break;
+                        case "Decimal Number":
+                            <td>@keyValue.DoubleValue</td>
+                            break;
+                        case "Currency":
+                            <td>$@keyValue.CurrencyValue</td>
+                            break;
+                        case "Date":
+                            <td>@keyValue.DateTimeValue.ToString().Substring(0, keyValue.DateTimeValue.ToString().Length - 12)</td>
+                            break;
+                    }
+                }
+                <td>@userName</td>
+                <td>@surveyInstance.DateTaken</td>
+            </tr>
+        }
+    </table>
+    
+    <br />
+    
+    <input value="Cancel" type="button" id="btnSurveyCancel" style="width: 70px"/>
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnSurveyCancel").click(function () {
+            document.location.href = '@Url.Action("Index", "Survey")';
+        });
+    });
+</script>

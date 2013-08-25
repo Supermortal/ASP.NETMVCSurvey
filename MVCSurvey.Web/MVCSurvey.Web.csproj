@@ -1,0 +1,1558 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{39DAA9D8-CF6F-4233-8B3D-FE466C35F21D}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVCSurvey.Web</RootNamespace>
+    <AssemblyName>MVCSurvey.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet">
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.3.0.13117\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core">
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.3.0.13117\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth">
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.3.0.13117\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId">
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.3.0.13117\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty">
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.3.0.13117\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenIdInfoCard.UI">
+      <HintPath>..\packages\DotNetOpenAuth.OpenIdInfoCard.UI.4.3.0.13117\lib\net40-full\DotNetOpenAuth.OpenIdInfoCard.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.30506.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Net.Http, Version=2.1.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.1.10\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.1.10\lib\net40\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.30506.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SurveyController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Web_Errors.mdf" />
+    <Content Include="App_Data\Web_Errors_log.ldf">
+      <DependentUpon>Web_Errors.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\reset.css" />
+    <Content Include="Content\survey\survey.css" />
+    <Content Include="Content\themes\base\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <None Include="Scripts\jquery\jquery-2.0.2.intellisense.js" />
+    <Content Include="Scripts\jquery\jquery-2.0.2.js" />
+    <Content Include="Scripts\jquery\jquery-2.0.2.min.js" />
+    <Content Include="Scripts\jquery\jquery-2.0.2.min.map" />
+    <None Include="Scripts\jquery\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery\jquery-ui-1.10.3.js" />
+    <Content Include="Scripts\jquery\jquery-ui-1.10.3.min.js" />
+    <Content Include="Scripts\jquery\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery\jquery.validate.js" />
+    <Content Include="Scripts\jquery\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\xinha\compression_readme.txt" />
+    <Content Include="Scripts\xinha\contrib\dojo_js_compressor.jar" />
+    <Content Include="Scripts\xinha\contrib\test_server.py" />
+    <Content Include="Scripts\xinha\contrib\yuicompressor-2.4.2.jar" />
+    <Content Include="Scripts\xinha\examples\ExtendedDemo.html" />
+    <Content Include="Scripts\xinha\examples\files\custom.css" />
+    <Content Include="Scripts\xinha\examples\files\dynamic.css" />
+    <Content Include="Scripts\xinha\examples\files\Extended.html" />
+    <Content Include="Scripts\xinha\examples\files\ext_example-body.html" />
+    <Content Include="Scripts\xinha\examples\files\full_example.css" />
+    <Content Include="Scripts\xinha\examples\files\stylist.css" />
+    <Content Include="Scripts\xinha\examples\Newbie.html" />
+    <Content Include="Scripts\xinha\examples\simple_example.html" />
+    <Content Include="Scripts\xinha\examples\testbed.html" />
+    <Content Include="Scripts\xinha\examples\XinhaConfig.js" />
+    <Content Include="Scripts\xinha\htmlarea.js" />
+    <Content Include="Scripts\xinha\iconsets\Classic\de\bold.gif" />
+    <Content Include="Scripts\xinha\iconsets\Classic\de\italic.gif" />
+    <Content Include="Scripts\xinha\iconsets\Classic\de\underline.gif" />
+    <Content Include="Scripts\xinha\iconsets\Classic\ed_buttons_main.gif" />
+    <Content Include="Scripts\xinha\iconsets\Classic\ed_charmap.gif" />
+    <Content Include="Scripts\xinha\iconsets\Classic\ed_selectall.gif" />
+    <Content Include="Scripts\xinha\iconsets\Classic\fr\bold.gif" />
+    <Content Include="Scripts\xinha\iconsets\Classic\fr\strikethrough.gif" />
+    <Content Include="Scripts\xinha\iconsets\Classic\fr\underline.gif" />
+    <Content Include="Scripts\xinha\iconsets\Classic\iconset.xml" />
+    <Content Include="Scripts\xinha\iconsets\Crystal\ed_buttons_main.png" />
+    <Content Include="Scripts\xinha\iconsets\Crystal\iconset.xml" />
+    <Content Include="Scripts\xinha\iconsets\Tango\ed_buttons_main.png" />
+    <Content Include="Scripts\xinha\iconsets\Tango\iconset.xml" />
+    <Content Include="Scripts\xinha\images\de\bold.gif" />
+    <Content Include="Scripts\xinha\images\de\italic.gif" />
+    <Content Include="Scripts\xinha\images\de\underline.gif" />
+    <Content Include="Scripts\xinha\images\ed_about.gif" />
+    <Content Include="Scripts\xinha\images\ed_align.gif" />
+    <Content Include="Scripts\xinha\images\ed_align_center.gif" />
+    <Content Include="Scripts\xinha\images\ed_align_justify.gif" />
+    <Content Include="Scripts\xinha\images\ed_align_left.gif" />
+    <Content Include="Scripts\xinha\images\ed_align_right.gif" />
+    <Content Include="Scripts\xinha\images\ed_blank.gif" />
+    <Content Include="Scripts\xinha\images\ed_buttons_main.gif" />
+    <Content Include="Scripts\xinha\images\ed_buttons_main.png" />
+    <Content Include="Scripts\xinha\images\ed_charmap.gif" />
+    <Content Include="Scripts\xinha\images\ed_clearfonts.gif" />
+    <Content Include="Scripts\xinha\images\ed_color_bg.gif" />
+    <Content Include="Scripts\xinha\images\ed_color_fg.gif" />
+    <Content Include="Scripts\xinha\images\ed_copy.gif" />
+    <Content Include="Scripts\xinha\images\ed_custom.gif" />
+    <Content Include="Scripts\xinha\images\ed_cut.gif" />
+    <Content Include="Scripts\xinha\images\ed_delete.gif" />
+    <Content Include="Scripts\xinha\images\ed_format_bold.gif" />
+    <Content Include="Scripts\xinha\images\ed_format_italic.gif" />
+    <Content Include="Scripts\xinha\images\ed_format_strike.gif" />
+    <Content Include="Scripts\xinha\images\ed_format_sub.gif" />
+    <Content Include="Scripts\xinha\images\ed_format_sup.gif" />
+    <Content Include="Scripts\xinha\images\ed_format_underline.gif" />
+    <Content Include="Scripts\xinha\images\ed_help.gif" />
+    <Content Include="Scripts\xinha\images\ed_hr.gif" />
+    <Content Include="Scripts\xinha\images\ed_html.gif" />
+    <Content Include="Scripts\xinha\images\ed_image.gif" />
+    <Content Include="Scripts\xinha\images\ed_indent_less.gif" />
+    <Content Include="Scripts\xinha\images\ed_indent_more.gif" />
+    <Content Include="Scripts\xinha\images\ed_killword.gif" />
+    <Content Include="Scripts\xinha\images\ed_left_to_right.gif" />
+    <Content Include="Scripts\xinha\images\ed_link.gif" />
+    <Content Include="Scripts\xinha\images\ed_list_bullet.gif" />
+    <Content Include="Scripts\xinha\images\ed_list_num.gif" />
+    <Content Include="Scripts\xinha\images\ed_overwrite.gif" />
+    <Content Include="Scripts\xinha\images\ed_paste.gif" />
+    <Content Include="Scripts\xinha\images\ed_print.gif" />
+    <Content Include="Scripts\xinha\images\ed_redo.gif" />
+    <Content Include="Scripts\xinha\images\ed_right_to_left.gif" />
+    <Content Include="Scripts\xinha\images\ed_rmformat.gif" />
+    <Content Include="Scripts\xinha\images\ed_save.gif" />
+    <Content Include="Scripts\xinha\images\ed_save.png" />
+    <Content Include="Scripts\xinha\images\ed_saveas.gif" />
+    <Content Include="Scripts\xinha\images\ed_selectall.gif" />
+    <Content Include="Scripts\xinha\images\ed_show_border.gif" />
+    <Content Include="Scripts\xinha\images\ed_splitblock.gif" />
+    <Content Include="Scripts\xinha\images\ed_splitcel.gif" />
+    <Content Include="Scripts\xinha\images\ed_undo.gif" />
+    <Content Include="Scripts\xinha\images\ed_word_cleaner.gif" />
+    <Content Include="Scripts\xinha\images\fr\bold.gif" />
+    <Content Include="Scripts\xinha\images\fr\strikethrough.gif" />
+    <Content Include="Scripts\xinha\images\fr\underline.gif" />
+    <Content Include="Scripts\xinha\images\fullscreen_maximize.gif" />
+    <Content Include="Scripts\xinha\images\fullscreen_minimize.gif" />
+    <Content Include="Scripts\xinha\images\insertfilelink.gif" />
+    <Content Include="Scripts\xinha\images\insertmacro.png" />
+    <Content Include="Scripts\xinha\images\insert_table.gif" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\document-new.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\document-open.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\document-print.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\document-save.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\edit-copy.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\edit-redo.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\edit-select-all.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\edit-undo.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\folder-new.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\format-direction-left-to-right.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\format-direction-right-to-left.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\format-indent-less.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\format-indent-more.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\format-justify-center.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\format-justify-fill.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\format-justify-left.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\format-justify-right.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\format-text-background-color.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\format-text-bold.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\format-text-color.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\format-text-italic.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\format-text-strikethrough.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\format-text-subscript.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\format-text-superscript.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\format-text-underline.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\go-up.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\insert-link.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\insert-table.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\toggle-borders.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\view-fullscreen.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\actions\view-restore.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\apps\accessories-character-map.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\apps\help-browser.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\mimetypes\image-x-generic.png" />
+    <Content Include="Scripts\xinha\images\tango\16x16\places\user-trash.png" />
+    <Content Include="Scripts\xinha\images\tango\32x32\apps\internet-web-browser.png" />
+    <Content Include="Scripts\xinha\images\tango\32x32\mimetypes\text-html.png" />
+    <Content Include="Scripts\xinha\images\tango\32x32\mimetypes\text-x-generic.png" />
+    <Content Include="Scripts\xinha\images\tango\32x32\mimetypes\x-office-document.png" />
+    <Content Include="Scripts\xinha\images\tango\32x32\places\folder.png" />
+    <Content Include="Scripts\xinha\images\tango\32x32\places\network-server.png" />
+    <Content Include="Scripts\xinha\images\tidy.gif" />
+    <Content Include="Scripts\xinha\images\toggle_borders.gif" />
+    <Content Include="Scripts\xinha\images\xinha-small-icon.gif" />
+    <Content Include="Scripts\xinha\images\xinha_logo.gif" />
+    <Content Include="Scripts\xinha\init.js" />
+    <Content Include="Scripts\xinha\lang\b5.js" />
+    <Content Include="Scripts\xinha\lang\ch.js" />
+    <Content Include="Scripts\xinha\lang\cz.js" />
+    <Content Include="Scripts\xinha\lang\da.js" />
+    <Content Include="Scripts\xinha\lang\de.js" />
+    <Content Include="Scripts\xinha\lang\ee.js" />
+    <Content Include="Scripts\xinha\lang\el.js" />
+    <Content Include="Scripts\xinha\lang\es.js" />
+    <Content Include="Scripts\xinha\lang\eu.js" />
+    <Content Include="Scripts\xinha\lang\fa.js" />
+    <Content Include="Scripts\xinha\lang\fi.js" />
+    <Content Include="Scripts\xinha\lang\fr.js" />
+    <Content Include="Scripts\xinha\lang\gb.js" />
+    <Content Include="Scripts\xinha\lang\he.js" />
+    <Content Include="Scripts\xinha\lang\hu.js" />
+    <Content Include="Scripts\xinha\lang\it.js" />
+    <Content Include="Scripts\xinha\lang\ja.js" />
+    <Content Include="Scripts\xinha\lang\lt.js" />
+    <Content Include="Scripts\xinha\lang\lv.js" />
+    <Content Include="Scripts\xinha\lang\nb.js" />
+    <Content Include="Scripts\xinha\lang\nl.js" />
+    <Content Include="Scripts\xinha\lang\pl.js" />
+    <Content Include="Scripts\xinha\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\lang\ro.js" />
+    <Content Include="Scripts\xinha\lang\ru.js" />
+    <Content Include="Scripts\xinha\lang\sh.js" />
+    <Content Include="Scripts\xinha\lang\si.js" />
+    <Content Include="Scripts\xinha\lang\sr.js" />
+    <Content Include="Scripts\xinha\lang\sv.js" />
+    <Content Include="Scripts\xinha\lang\th.js" />
+    <Content Include="Scripts\xinha\lang\vn.js" />
+    <Content Include="Scripts\xinha\license.txt" />
+    <Content Include="Scripts\xinha\modules\AboutBox\about.css" />
+    <Content Include="Scripts\xinha\modules\AboutBox\AboutBox.js" />
+    <Content Include="Scripts\xinha\modules\AboutBox\dialog.html" />
+    <Content Include="Scripts\xinha\modules\ColorPicker\ColorPicker.js" />
+    <Content Include="Scripts\xinha\modules\ColorPicker\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\modules\CreateLink\dialog.html" />
+    <Content Include="Scripts\xinha\modules\CreateLink\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\modules\CreateLink\link.html" />
+    <Content Include="Scripts\xinha\modules\CreateLink\link.js" />
+    <Content Include="Scripts\xinha\modules\CreateLink\pluginMethods.js" />
+    <Content Include="Scripts\xinha\modules\Dialogs\DetachedDialog.js" />
+    <Content Include="Scripts\xinha\modules\Dialogs\dialog.js" />
+    <Content Include="Scripts\xinha\modules\Dialogs\div-dialog.js" />
+    <Content Include="Scripts\xinha\modules\Dialogs\panel-dialog.js" />
+    <Content Include="Scripts\xinha\modules\Dialogs\popupwin.js" />
+    <Content Include="Scripts\xinha\modules\Dialogs\XinhaDialog.js" />
+    <Content Include="Scripts\xinha\modules\FullScreen\full-screen.js" />
+    <Content Include="Scripts\xinha\modules\FullScreen\lang\de.js" />
+    <Content Include="Scripts\xinha\modules\FullScreen\lang\es.js" />
+    <Content Include="Scripts\xinha\modules\FullScreen\lang\fr.js" />
+    <Content Include="Scripts\xinha\modules\FullScreen\lang\ja.js" />
+    <Content Include="Scripts\xinha\modules\FullScreen\lang\nb.js" />
+    <Content Include="Scripts\xinha\modules\FullScreen\lang\nl.js" />
+    <Content Include="Scripts\xinha\modules\FullScreen\lang\pl.js" />
+    <Content Include="Scripts\xinha\modules\FullScreen\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\modules\FullScreen\lang\ru.js" />
+    <Content Include="Scripts\xinha\modules\FullScreen\lang\sv.js" />
+    <Content Include="Scripts\xinha\modules\Gecko\Gecko.js" />
+    <Content Include="Scripts\xinha\modules\Gecko\paraHandlerBest.js" />
+    <Content Include="Scripts\xinha\modules\GetHtml\DOMwalk.js" />
+    <Content Include="Scripts\xinha\modules\GetHtml\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\modules\GetHtml\TransformInnerHTML.js" />
+    <Content Include="Scripts\xinha\modules\InlineStyler\InlineStyler.js" />
+    <Content Include="Scripts\xinha\modules\InsertImage\dialog.html" />
+    <Content Include="Scripts\xinha\modules\InsertImage\insert_image.html" />
+    <Content Include="Scripts\xinha\modules\InsertImage\insert_image.js" />
+    <Content Include="Scripts\xinha\modules\InsertImage\pluginMethods.js" />
+    <Content Include="Scripts\xinha\modules\InsertTable\dialog.html" />
+    <Content Include="Scripts\xinha\modules\InsertTable\insert_table.html" />
+    <Content Include="Scripts\xinha\modules\InsertTable\insert_table.js" />
+    <Content Include="Scripts\xinha\modules\InsertTable\pluginMethods.js" />
+    <Content Include="Scripts\xinha\modules\InternetExplorer\InternetExplorer.js" />
+    <Content Include="Scripts\xinha\modules\Opera\Opera.js" />
+    <Content Include="Scripts\xinha\modules\WebKit\WebKit.js" />
+    <Content Include="Scripts\xinha\my_config.js" />
+    <Content Include="Scripts\xinha\plugins\Abbreviation\abbreviation.css" />
+    <Content Include="Scripts\xinha\plugins\Abbreviation\Abbreviation.js" />
+    <Content Include="Scripts\xinha\plugins\Abbreviation\abbr\de.js" />
+    <Content Include="Scripts\xinha\plugins\Abbreviation\abbr\en.js" />
+    <Content Include="Scripts\xinha\plugins\Abbreviation\dialog.html" />
+    <Content Include="Scripts\xinha\plugins\Abbreviation\img\ed_abbreviation.gif" />
+    <Content Include="Scripts\xinha\plugins\Abbreviation\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\Abbreviation\lang\es.js" />
+    <Content Include="Scripts\xinha\plugins\Abbreviation\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\Abbreviation\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\Abbreviation\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\Abbreviation\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\Abbreviation\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\CharacterMap\CharacterMap.css" />
+    <Content Include="Scripts\xinha\plugins\CharacterMap\CharacterMap.js" />
+    <Content Include="Scripts\xinha\plugins\CharacterMap\img\ed_charmap.gif" />
+    <Content Include="Scripts\xinha\plugins\CharacterMap\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\CharacterMap\lang\es.js" />
+    <Content Include="Scripts\xinha\plugins\CharacterMap\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\CharacterMap\lang\it.js" />
+    <Content Include="Scripts\xinha\plugins\CharacterMap\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\CharacterMap\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\CharacterMap\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\CharacterMap\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\CharacterMap\lang\ru.js" />
+    <Content Include="Scripts\xinha\plugins\CharacterMap\lang\sv.js" />
+    <Content Include="Scripts\xinha\plugins\CharacterMap\popups\select_character.html" />
+    <Content Include="Scripts\xinha\plugins\CharCounter\CharCounter.js" />
+    <Content Include="Scripts\xinha\plugins\CharCounter\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\CharCounter\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\CharCounter\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\CharCounter\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\CharCounter\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\CharCounter\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\ContextMenu\ContextMenu.js" />
+    <Content Include="Scripts\xinha\plugins\ContextMenu\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\ContextMenu\lang\el.js" />
+    <Content Include="Scripts\xinha\plugins\ContextMenu\lang\es.js" />
+    <Content Include="Scripts\xinha\plugins\ContextMenu\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\ContextMenu\lang\he.js" />
+    <Content Include="Scripts\xinha\plugins\ContextMenu\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\ContextMenu\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\ContextMenu\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\ContextMenu\lang\pl.js" />
+    <Content Include="Scripts\xinha\plugins\ContextMenu\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\ContextMenu\lang\sv.js" />
+    <Content Include="Scripts\xinha\plugins\ContextMenu\menu.css" />
+    <Content Include="Scripts\xinha\plugins\CSSPicker\CSSPicker.js" />
+    <Content Include="Scripts\xinha\plugins\CSS\CSS.js" />
+    <Content Include="Scripts\xinha\plugins\DefinitionList\definition-list.css" />
+    <Content Include="Scripts\xinha\plugins\DefinitionList\DefinitionList.js" />
+    <Content Include="Scripts\xinha\plugins\DefinitionList\img\ed_dd.gif" />
+    <Content Include="Scripts\xinha\plugins\DefinitionList\img\ed_dl.gif" />
+    <Content Include="Scripts\xinha\plugins\DefinitionList\img\ed_dt.gif" />
+    <Content Include="Scripts\xinha\plugins\DefinitionList\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\DefinitionList\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\DefinitionList\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\DoubleClick\DoubleClick.js" />
+    <Content Include="Scripts\xinha\plugins\DynamicCSS\DynamicCSS.js" />
+    <Content Include="Scripts\xinha\plugins\DynamicCSS\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\DynamicCSS\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\DynamicCSS\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\DynamicCSS\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\DynamicCSS\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\DynamicCSS\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\EditTag\EditTag.js" />
+    <Content Include="Scripts\xinha\plugins\EditTag\img\ed_edit_tag.gif" />
+    <Content Include="Scripts\xinha\plugins\EditTag\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\EditTag\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\EditTag\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\EditTag\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\EditTag\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\EditTag\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\EditTag\popups\edit_tag.html" />
+    <Content Include="Scripts\xinha\plugins\Equation\ASCIIMathML.js" />
+    <Content Include="Scripts\xinha\plugins\Equation\Equation.js" />
+    <Content Include="Scripts\xinha\plugins\Equation\example.html" />
+    <Content Include="Scripts\xinha\plugins\Equation\img\abs_value.gif" />
+    <Content Include="Scripts\xinha\plugins\Equation\img\diag_fraction.gif" />
+    <Content Include="Scripts\xinha\plugins\Equation\img\divide.gif" />
+    <Content Include="Scripts\xinha\plugins\Equation\img\dsp_greater_equal.gif" />
+    <Content Include="Scripts\xinha\plugins\Equation\img\dsp_less_equal.gif" />
+    <Content Include="Scripts\xinha\plugins\Equation\img\dsp_notequal.gif" />
+    <Content Include="Scripts\xinha\plugins\Equation\img\equation.gif" />
+    <Content Include="Scripts\xinha\plugins\Equation\img\equation.old.gif" />
+    <Content Include="Scripts\xinha\plugins\Equation\img\greater_equal_than.gif" />
+    <Content Include="Scripts\xinha\plugins\Equation\img\hor_fraction.gif" />
+    <Content Include="Scripts\xinha\plugins\Equation\img\less_equal_than.gif" />
+    <Content Include="Scripts\xinha\plugins\Equation\img\mul.gif" />
+    <Content Include="Scripts\xinha\plugins\Equation\img\notequal.gif" />
+    <Content Include="Scripts\xinha\plugins\Equation\img\parenthesis.gif" />
+    <Content Include="Scripts\xinha\plugins\Equation\img\root.gif" />
+    <Content Include="Scripts\xinha\plugins\Equation\img\square_root.gif" />
+    <Content Include="Scripts\xinha\plugins\Equation\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\Equation\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\Equation\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\Equation\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\Equation\popups\dialog.html" />
+    <Content Include="Scripts\xinha\plugins\Equation\readme.txt" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\assets\dialog.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\assets\dragTableCols.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\assets\editor.css" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\assets\editor.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\assets\EditorContent.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\assets\editorFrame.css" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\assets\editorFrame.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\assets\hover.htc" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\assets\ImageEditor.css" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\assets\imagelist.css" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\assets\images.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\assets\manager.css" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\assets\manager.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\assets\popup.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\assets\slider.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\assets\wz_jsgraphics.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\demo_images\bikerpeep.jpg" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\demo_images\linux\linux.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\demo_images\wesnoth078.jpg" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\ExtendedFileManager.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\file-picker.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\def.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\def_small.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\doc.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\doc_small.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\fla.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\fla_small.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\folder.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\folder_small.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\gif_small.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\gz.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\gz_small.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\html.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\html_small.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\jpg_small.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\js.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\js_small.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\mov.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\mov_small.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\pdf.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\pdf_small.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\php.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\php_small.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\png_small.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\ppt.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\ppt_small.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\rar.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\rar_small.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\txt.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\txt_small.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\xls.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\xls_small.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\zip.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\icons\zip_small.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\1x1_transparent.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\2x2.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\2x2_w.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\btnFolderNew.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\btnFolderNew1.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\btnFolderUp.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\btnFolderUp1.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\btn_cancel.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\btn_ok.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\crop.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\default.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\div.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\dots.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\edit_active.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\edit_copy.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\edit_cut.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\edit_paste.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\edit_pencil.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\edit_rename.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\edit_trash.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\ed_linkfile.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\ed_linkfile1.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\folder.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\hand.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\islocked2.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\locked.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\measure.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\noimages.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\rotate.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\save.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\scale.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\spacer.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\t_black.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\t_white.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\unlocked.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\unlocked2.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\img\unlocked_empty.gif" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\lang\da.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\lang\es.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\lang\pl.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\prompt.html" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\Readme.txt" />
+    <Content Include="Scripts\xinha\plugins\FindReplace\FindReplace.js" />
+    <Content Include="Scripts\xinha\plugins\FindReplace\fr_engine.js" />
+    <Content Include="Scripts\xinha\plugins\FindReplace\img\ed_find.gif" />
+    <Content Include="Scripts\xinha\plugins\FindReplace\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\FindReplace\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\FindReplace\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\FindReplace\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\FindReplace\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\FindReplace\lang\pl.js" />
+    <Content Include="Scripts\xinha\plugins\FindReplace\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\FindReplace\lang\ru.js" />
+    <Content Include="Scripts\xinha\plugins\FindReplace\lang\sv.js" />
+    <Content Include="Scripts\xinha\plugins\FindReplace\popups\find_replace.html" />
+    <Content Include="Scripts\xinha\plugins\FormOperations\default_form.html" />
+    <Content Include="Scripts\xinha\plugins\FormOperations\FormOperations.js" />
+    <Content Include="Scripts\xinha\plugins\FormOperations\iframe.css" />
+    <Content Include="Scripts\xinha\plugins\FormOperations\img\buttons.gif" />
+    <Content Include="Scripts\xinha\plugins\FormOperations\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\FormOperations\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\FormOperations\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\FormOperations\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\FormOperations\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\FormOperations\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\FormOperations\panel.html" />
+    <Content Include="Scripts\xinha\plugins\Forms\forms.css" />
+    <Content Include="Scripts\xinha\plugins\Forms\Forms.js" />
+    <Content Include="Scripts\xinha\plugins\Forms\img\ed_button.gif" />
+    <Content Include="Scripts\xinha\plugins\Forms\img\ed_checkbox.gif" />
+    <Content Include="Scripts\xinha\plugins\Forms\img\ed_fieldset.gif" />
+    <Content Include="Scripts\xinha\plugins\Forms\img\ed_file.gif" />
+    <Content Include="Scripts\xinha\plugins\Forms\img\ed_form.gif" />
+    <Content Include="Scripts\xinha\plugins\Forms\img\ed_hidden.gif" />
+    <Content Include="Scripts\xinha\plugins\Forms\img\ed_image.gif" />
+    <Content Include="Scripts\xinha\plugins\Forms\img\ed_label.gif" />
+    <Content Include="Scripts\xinha\plugins\Forms\img\ed_password.gif" />
+    <Content Include="Scripts\xinha\plugins\Forms\img\ed_radio.gif" />
+    <Content Include="Scripts\xinha\plugins\Forms\img\ed_reset.gif" />
+    <Content Include="Scripts\xinha\plugins\Forms\img\ed_select.gif" />
+    <Content Include="Scripts\xinha\plugins\Forms\img\ed_submit.gif" />
+    <Content Include="Scripts\xinha\plugins\Forms\img\ed_text.gif" />
+    <Content Include="Scripts\xinha\plugins\Forms\img\ed_textarea.gif" />
+    <Content Include="Scripts\xinha\plugins\Forms\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\Forms\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\Forms\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\Forms\popups\fieldset.html" />
+    <Content Include="Scripts\xinha\plugins\Forms\popups\form.html" />
+    <Content Include="Scripts\xinha\plugins\Forms\popups\input.html" />
+    <Content Include="Scripts\xinha\plugins\Forms\popups\label.html" />
+    <Content Include="Scripts\xinha\plugins\Forms\popups\select.html" />
+    <Content Include="Scripts\xinha\plugins\Forms\popups\textarea.html" />
+    <Content Include="Scripts\xinha\plugins\FullPage\FullPage.js" />
+    <Content Include="Scripts\xinha\plugins\FullPage\img\docprop.gif" />
+    <Content Include="Scripts\xinha\plugins\FullPage\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\FullPage\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\FullPage\lang\he.js" />
+    <Content Include="Scripts\xinha\plugins\FullPage\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\FullPage\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\FullPage\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\FullPage\lang\pl.js" />
+    <Content Include="Scripts\xinha\plugins\FullPage\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\FullPage\lang\ro.js" />
+    <Content Include="Scripts\xinha\plugins\FullPage\popups\docprop.html" />
+    <Content Include="Scripts\xinha\plugins\GenericPlugin\GenericPlugin.js" />
+    <Content Include="Scripts\xinha\plugins\GetHtml\GetHtml.js" />
+    <Content Include="Scripts\xinha\plugins\HorizontalRule\HorizontalRule.js" />
+    <Content Include="Scripts\xinha\plugins\HorizontalRule\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\HorizontalRule\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\HorizontalRule\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\HorizontalRule\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\HorizontalRule\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\HorizontalRule\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\HorizontalRule\popups\edit_horizontal_rule.html" />
+    <Content Include="Scripts\xinha\plugins\HtmlEntities\Entities.js" />
+    <Content Include="Scripts\xinha\plugins\HtmlEntities\HtmlEntities.js" />
+    <Content Include="Scripts\xinha\plugins\HtmlEntities\iso-8859-1.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\assets\dialog.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\assets\editor.css" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\assets\editor.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\assets\EditorContent.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\assets\editorFrame.css" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\assets\editorFrame.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\assets\hover.htc" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\assets\ImageEditor.css" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\assets\imagelist.css" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\assets\images.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\assets\manager.css" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\assets\manager.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\assets\popup.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\assets\slider.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\assets\wz_jsgraphics.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\demo_images\bikerpeep.jpg" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\demo_images\linux\linux.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\demo_images\wesnoth078.jpg" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\image-picker.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\ImageManager.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\2x2.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\2x2_w.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\btnFolderNew.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\btnFolderUp.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\btn_cancel.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\btn_ok.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\crop.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\default.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\div.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\dots.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\edit_active.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\edit_pencil.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\edit_trash.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\folder.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\hand.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\islocked2.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\locked.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\measure.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\noimages.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\rotate.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\save.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\scale.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\spacer.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\t_black.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\t_white.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\unlocked.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\img\unlocked2.gif" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\lang\es.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\lang\pl.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\lang\ru.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\lang\sv.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\newFolder.html" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\README.txt" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\smart-image.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\swfobject\expressinstall.html" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\swfobject\expressinstall.swf" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\swfobject\swfobject.js" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\swfobject\swfobject_source.js" />
+    <Content Include="Scripts\xinha\plugins\InsertAnchor\dialog.html" />
+    <Content Include="Scripts\xinha\plugins\InsertAnchor\img\insert-anchor.gif" />
+    <Content Include="Scripts\xinha\plugins\InsertAnchor\img\placeholder.gif" />
+    <Content Include="Scripts\xinha\plugins\InsertAnchor\insert-anchor.css" />
+    <Content Include="Scripts\xinha\plugins\InsertAnchor\InsertAnchor.js" />
+    <Content Include="Scripts\xinha\plugins\InsertAnchor\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\InsertAnchor\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\InsertAnchor\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\InsertAnchor\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\InsertAnchor\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\InsertAnchor\lang\pl.js" />
+    <Content Include="Scripts\xinha\plugins\InsertAnchor\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\InsertAnchor\popups\insert_anchor.html" />
+    <Content Include="Scripts\xinha\plugins\InsertNote\dialog.html" />
+    <Content Include="Scripts\xinha\plugins\InsertNote\img\insert-note.gif" />
+    <Content Include="Scripts\xinha\plugins\InsertNote\InsertNote.js" />
+    <Content Include="Scripts\xinha\plugins\InsertPagebreak\img\pagebreak.gif" />
+    <Content Include="Scripts\xinha\plugins\InsertPagebreak\InsertPagebreak.js" />
+    <Content Include="Scripts\xinha\plugins\InsertPagebreak\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\InsertPagebreak\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\InsertPagebreak\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\InsertPagebreak\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\InsertPagebreak\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\InsertPagebreak\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\dialog.css" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\dialog.html" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\img\ed_smiley.gif" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\InsertSmiley.js" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\README.txt" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\smileys.txt" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\smileys\Angry.gif" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\smileys\Cool.gif" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\smileys\Excited.gif" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\smileys\Grin.gif" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\smileys\Pleased.gif" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\smileys\Sad.gif" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\smileys\smileys.js" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\smileys\Surprised.gif" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\smileys\Wink.gif" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\dialog.html" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\img\1.PNG" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\img\10.PNG" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\img\11.PNG" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\img\12.PNG" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\img\13.PNG" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\img\14.PNG" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\img\15.PNG" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\img\16.PNG" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\img\2.PNG" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\img\3.PNG" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\img\4.PNG" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\img\5.PNG" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\img\6.PNG" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\img\7.PNG" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\img\8.PNG" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\img\9.PNG" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\img\ed_snippet.gif" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\InsertSnippet.css" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\InsertSnippet2.js" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\readme.html" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\snippets.xml" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet\demosnippets.js" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet\img\ed_snippet.gif" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet\InsertSnippet.css" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet\InsertSnippet.js" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet\popups\insertsnippet.html" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet\readme.html" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet\snippets.html" />
+    <Content Include="Scripts\xinha\plugins\InsertWords\InsertWords.js" />
+    <Content Include="Scripts\xinha\plugins\LangMarks\lang-marks.css" />
+    <Content Include="Scripts\xinha\plugins\LangMarks\LangMarks.js" />
+    <Content Include="Scripts\xinha\plugins\LangMarks\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\LangMarks\lang\es.js" />
+    <Content Include="Scripts\xinha\plugins\LangMarks\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\LangMarks\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\LangMarks\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\LangMarks\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\LangMarks\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\Linker\dialog.html" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\api.html" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\dtree.css" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\dtree.js" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\example01.html" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\base.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\cd.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\copy.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\empty.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\folder.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\folderopen.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\globe.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\imgfolder.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\join.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\joinbottom.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\line.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\minus.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\minusbottom.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\move.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\musicfolder.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\nolines_minus.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\nolines_plus.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\offline.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\offline.png" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\page.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\plus.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\plusbottom.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\question.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\dTree\img\trash.gif" />
+    <Content Include="Scripts\xinha\plugins\Linker\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\Linker\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\Linker\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\Linker\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\Linker\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\Linker\lang\pl.js" />
+    <Content Include="Scripts\xinha\plugins\Linker\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\Linker\link-picker.js" />
+    <Content Include="Scripts\xinha\plugins\Linker\Linker.js" />
+    <Content Include="Scripts\xinha\plugins\Linker\pluginMethods.js" />
+    <Content Include="Scripts\xinha\plugins\ListType\img\circle.png" />
+    <Content Include="Scripts\xinha\plugins\ListType\img\decimal.png" />
+    <Content Include="Scripts\xinha\plugins\ListType\img\disc.png" />
+    <Content Include="Scripts\xinha\plugins\ListType\img\lower-alpha.png" />
+    <Content Include="Scripts\xinha\plugins\ListType\img\lower-roman.png" />
+    <Content Include="Scripts\xinha\plugins\ListType\img\none.png" />
+    <Content Include="Scripts\xinha\plugins\ListType\img\square.png" />
+    <Content Include="Scripts\xinha\plugins\ListType\img\upper-alpha.png" />
+    <Content Include="Scripts\xinha\plugins\ListType\img\upper-roman.png" />
+    <Content Include="Scripts\xinha\plugins\ListType\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\ListType\lang\es.js" />
+    <Content Include="Scripts\xinha\plugins\ListType\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\ListType\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\ListType\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\ListType\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\ListType\lang\pl.js" />
+    <Content Include="Scripts\xinha\plugins\ListType\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\ListType\lang\ru.js" />
+    <Content Include="Scripts\xinha\plugins\ListType\lang\sv.js" />
+    <Content Include="Scripts\xinha\plugins\ListType\ListType.css" />
+    <Content Include="Scripts\xinha\plugins\ListType\ListType.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\add.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\bar.gif" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\button.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\button_disabled.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\cancel.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\checkbox.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\destroy.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\dewplayer.swf" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\disk.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\filelist.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\filelist_selected.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\7z.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\ace.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\as.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\bat.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\bmp.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\cmd.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\default.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\dir.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\dir_up.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\doc.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\docx.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\exe.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\flv.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\gif.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\gz.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\html.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\ini.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\iso.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\jpeg.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\jpg.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\js.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\lnk.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\mp3.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\odp.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\ods.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\odt.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\pdf.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\php.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\png.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\ppt.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\rar.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\rb.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\sql.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\swf.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\tar.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\wmv.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\xls.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\xlsx.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Icons\zip.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\loader.gif" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\menu.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\progress.gif" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\rename.png" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Assets\Swiff.Uploader.swf" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Css\Additions.css" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Css\FileManager.css" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Demos\index.html" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Demos\mootools-core.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Demos\mootools-more.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Demos\tinymce.html" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Language\Language.br.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Language\Language.cs.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Language\Language.da.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Language\Language.de.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Language\Language.en.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Language\Language.es.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Language\Language.fi.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Language\Language.fr.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Language\Language.it.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Language\Language.nl.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Language\Language.pl.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Language\Language.ru.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Language\Language.se.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Source\Additions.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Source\FileManager.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Source\FileManager.TinyMCE.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Source\Gallery.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Source\Uploader.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Source\Uploader\Fx.ProgressBar.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Source\Uploader\Swiff.Uploader.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\MootoolsFileManager.css" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\MootoolsFileManager.FileManager.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\MootoolsFileManager.ImageManager.js" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\MootoolsFileManager.js" />
+    <Content Include="Scripts\xinha\plugins\PasteText\img\ed_paste_text.gif" />
+    <Content Include="Scripts\xinha\plugins\PasteText\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\PasteText\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\PasteText\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\PasteText\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\PasteText\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\PasteText\lang\pl.js" />
+    <Content Include="Scripts\xinha\plugins\PasteText\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\PasteText\lang\ru.js" />
+    <Content Include="Scripts\xinha\plugins\PasteText\PasteText.js" />
+    <Content Include="Scripts\xinha\plugins\PasteText\popups\paste_text.html" />
+    <Content Include="Scripts\xinha\plugins\PersistentStorage\dialog.html" />
+    <Content Include="Scripts\xinha\plugins\PersistentStorage\PersistentStorage.js" />
+    <Content Include="Scripts\xinha\plugins\PreserveScripts\js.png" />
+    <Content Include="Scripts\xinha\plugins\PreserveScripts\php.png" />
+    <Content Include="Scripts\xinha\plugins\PreserveScripts\php.svg" />
+    <Content Include="Scripts\xinha\plugins\PreserveScripts\PreserveScripts.js" />
+    <Content Include="Scripts\xinha\plugins\PSFixed\PSFixed.js" />
+    <Content Include="Scripts\xinha\plugins\PSLocal\dialog.html" />
+    <Content Include="Scripts\xinha\plugins\PSLocal\gears_init.js" />
+    <Content Include="Scripts\xinha\plugins\PSLocal\PSLocal.js" />
+    <Content Include="Scripts\xinha\plugins\PSServer\demo_images\bikerpeep.jpg" />
+    <Content Include="Scripts\xinha\plugins\PSServer\demo_images\linux\linux.gif" />
+    <Content Include="Scripts\xinha\plugins\PSServer\demo_images\wesnoth078.jpg" />
+    <Content Include="Scripts\xinha\plugins\PSServer\PSServer.js" />
+    <Content Include="Scripts\xinha\plugins\QuickTag\img\ed_quicktag.gif" />
+    <Content Include="Scripts\xinha\plugins\QuickTag\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\QuickTag\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\QuickTag\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\QuickTag\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\QuickTag\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\QuickTag\lang\pl.js" />
+    <Content Include="Scripts\xinha\plugins\QuickTag\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\QuickTag\popups\quicktag.html" />
+    <Content Include="Scripts\xinha\plugins\QuickTag\QuickTag.js" />
+    <Content Include="Scripts\xinha\plugins\QuickTag\tag-lib.js" />
+    <Content Include="Scripts\xinha\plugins\SaveOnBlur\SaveOnBlur.js" />
+    <Content Include="Scripts\xinha\plugins\SaveSubmit\img\ed_save_green.gif" />
+    <Content Include="Scripts\xinha\plugins\SaveSubmit\img\ed_save_red.gif" />
+    <Content Include="Scripts\xinha\plugins\SaveSubmit\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\SaveSubmit\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\SaveSubmit\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\SaveSubmit\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\SaveSubmit\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\SaveSubmit\lang\ru.js" />
+    <Content Include="Scripts\xinha\plugins\SaveSubmit\README.txt" />
+    <Content Include="Scripts\xinha\plugins\SaveSubmit\SaveSubmit.js" />
+    <Content Include="Scripts\xinha\plugins\SetId\img\placeholder.gif" />
+    <Content Include="Scripts\xinha\plugins\SetId\img\set-id.gif" />
+    <Content Include="Scripts\xinha\plugins\SetId\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\SetId\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\SetId\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\SetId\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\SetId\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\SetId\popups\set_id.html" />
+    <Content Include="Scripts\xinha\plugins\SetId\set-id.css" />
+    <Content Include="Scripts\xinha\plugins\SetId\SetId.js" />
+    <Content Include="Scripts\xinha\plugins\SmartReplace\dialog.html" />
+    <Content Include="Scripts\xinha\plugins\SmartReplace\img\smartquotes.png" />
+    <Content Include="Scripts\xinha\plugins\SmartReplace\img\SmartReplace.svg" />
+    <Content Include="Scripts\xinha\plugins\SmartReplace\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\SmartReplace\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\SmartReplace\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\SmartReplace\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\SmartReplace\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\SmartReplace\readme.txt" />
+    <Content Include="Scripts\xinha\plugins\SmartReplace\SmartReplace.js" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\img\he-spell-check.gif" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\img\spell-check.gif" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\lang\cz.js" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\lang\da.js" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\lang\he.js" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\lang\hu.js" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\lang\ro.js" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\readme-tech.html" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\spell-check-style.css" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\spell-check-ui.html" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\spell-check-ui.js" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\SpellChecker.js" />
+    <Content Include="Scripts\xinha\plugins\Stylist\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\Stylist\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\Stylist\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\Stylist\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\Stylist\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\Stylist\lang\pl.js" />
+    <Content Include="Scripts\xinha\plugins\Stylist\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\Stylist\lang\ru.js" />
+    <Content Include="Scripts\xinha\plugins\Stylist\Stylist.js" />
+    <Content Include="Scripts\xinha\plugins\SuperClean\dialog.html" />
+    <Content Include="Scripts\xinha\plugins\SuperClean\filters\paragraph.js" />
+    <Content Include="Scripts\xinha\plugins\SuperClean\filters\word.js" />
+    <Content Include="Scripts\xinha\plugins\SuperClean\img\ed_superclean.gif" />
+    <Content Include="Scripts\xinha\plugins\SuperClean\lang\da.js" />
+    <Content Include="Scripts\xinha\plugins\SuperClean\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\SuperClean\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\SuperClean\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\SuperClean\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\SuperClean\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\SuperClean\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\SuperClean\pluginMethods.js" />
+    <Content Include="Scripts\xinha\plugins\SuperClean\SuperClean.js" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\img\cell-delete.gif" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\img\cell-insert-after.gif" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\img\cell-insert-before.gif" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\img\cell-merge.gif" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\img\cell-prop.gif" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\img\cell-split.gif" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\img\col-delete.gif" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\img\col-insert-after.gif" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\img\col-insert-before.gif" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\img\col-split.gif" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\img\row-delete.gif" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\img\row-insert-above.gif" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\img\row-insert-under.gif" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\img\row-prop.gif" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\img\row-split.gif" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\img\table-prop.gif" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\lang\cz.js" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\lang\da.js" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\lang\el.js" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\lang\es.js" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\lang\fi.js" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\lang\he.js" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\lang\it.js" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\lang\pl.js" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\lang\ro.js" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\lang\ru.js" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\lang\sv.js" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\popups\dialogMergeCells.html" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\popups\dialogRowCell.html" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\popups\dialogTable.html" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\popups\merge_cells.html" />
+    <Content Include="Scripts\xinha\plugins\TableOperations\TableOperations.js" />
+    <Content Include="Scripts\xinha\plugins\UnFormat\dialog.html" />
+    <Content Include="Scripts\xinha\plugins\UnFormat\img\unformat.gif" />
+    <Content Include="Scripts\xinha\plugins\UnFormat\lang\de.js" />
+    <Content Include="Scripts\xinha\plugins\UnFormat\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\UnFormat\lang\ja.js" />
+    <Content Include="Scripts\xinha\plugins\UnFormat\lang\nb.js" />
+    <Content Include="Scripts\xinha\plugins\UnFormat\lang\nl.js" />
+    <Content Include="Scripts\xinha\plugins\UnFormat\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\plugins\UnFormat\UnFormat.js" />
+    <Content Include="Scripts\xinha\plugins\UnsavedChanges\lang\es.js" />
+    <Content Include="Scripts\xinha\plugins\UnsavedChanges\lang\fr.js" />
+    <Content Include="Scripts\xinha\plugins\UnsavedChanges\lang\fr_ca.js" />
+    <Content Include="Scripts\xinha\plugins\UnsavedChanges\UnsavedChanges.js" />
+    <Content Include="Scripts\xinha\plugins\WysiwygWrap\WysiwygWrap.js" />
+    <Content Include="Scripts\xinha\popups\blank.html" />
+    <Content Include="Scripts\xinha\popups\editor_help.html" />
+    <Content Include="Scripts\xinha\popups\popup.css" />
+    <Content Include="Scripts\xinha\popups\popup.js" />
+    <Content Include="Scripts\xinha\popups\select_color.html" />
+    <Content Include="Scripts\xinha\release-notes.txt" />
+    <Content Include="Scripts\xinha\skins\blue-look\button-background.png" />
+    <Content Include="Scripts\xinha\skins\blue-look\separator.gif" />
+    <Content Include="Scripts\xinha\skins\blue-look\skin.css" />
+    <Content Include="Scripts\xinha\skins\blue-metallic\button-background.png" />
+    <Content Include="Scripts\xinha\skins\blue-metallic\separator.gif" />
+    <Content Include="Scripts\xinha\skins\blue-metallic\skin.css" />
+    <Content Include="Scripts\xinha\skins\green-look\button-background.gif" />
+    <Content Include="Scripts\xinha\skins\green-look\separator.gif" />
+    <Content Include="Scripts\xinha\skins\green-look\skin.css" />
+    <Content Include="Scripts\xinha\skins\inditreuse\back.png" />
+    <Content Include="Scripts\xinha\skins\inditreuse\button-background.png" />
+    <Content Include="Scripts\xinha\skins\inditreuse\hover.png" />
+    <Content Include="Scripts\xinha\skins\inditreuse\selected.png" />
+    <Content Include="Scripts\xinha\skins\inditreuse\separator.png" />
+    <Content Include="Scripts\xinha\skins\inditreuse\skin.css" />
+    <Content Include="Scripts\xinha\skins\silva\dialog.jpg" />
+    <Content Include="Scripts\xinha\skins\silva\html.gif" />
+    <Content Include="Scripts\xinha\skins\silva\skin.css" />
+    <Content Include="Scripts\xinha\skins\silva\skin.xml" />
+    <Content Include="Scripts\xinha\skins\silva\statusbar.png" />
+    <Content Include="Scripts\xinha\skins\silva\toolbar.png" />
+    <Content Include="Scripts\xinha\skins\titan\back.png" />
+    <Content Include="Scripts\xinha\skins\titan\button-background.png" />
+    <Content Include="Scripts\xinha\skins\titan\hover.png" />
+    <Content Include="Scripts\xinha\skins\titan\selected.png" />
+    <Content Include="Scripts\xinha\skins\titan\separator.png" />
+    <Content Include="Scripts\xinha\skins\titan\skin.css" />
+    <Content Include="Scripts\xinha\skins\xp-blue\back.png" />
+    <Content Include="Scripts\xinha\skins\xp-blue\button-background.png" />
+    <Content Include="Scripts\xinha\skins\xp-blue\hover.png" />
+    <Content Include="Scripts\xinha\skins\xp-blue\selected.png" />
+    <Content Include="Scripts\xinha\skins\xp-blue\separator.png" />
+    <Content Include="Scripts\xinha\skins\xp-blue\skin.css" />
+    <Content Include="Scripts\xinha\skins\xp-green\back.png" />
+    <Content Include="Scripts\xinha\skins\xp-green\button-background.png" />
+    <Content Include="Scripts\xinha\skins\xp-green\hover.png" />
+    <Content Include="Scripts\xinha\skins\xp-green\selected.png" />
+    <Content Include="Scripts\xinha\skins\xp-green\separator.png" />
+    <Content Include="Scripts\xinha\skins\xp-green\skin.css" />
+    <Content Include="Scripts\xinha\unsupported_plugins\BackgroundImage\BackgroundImage.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\BackgroundImage\backgrounds\blufur.jpg" />
+    <Content Include="Scripts\xinha\unsupported_plugins\BackgroundImage\backgrounds\palecnvs.jpg" />
+    <Content Include="Scripts\xinha\unsupported_plugins\BackgroundImage\backgrounds\ppplcnvs.jpg" />
+    <Content Include="Scripts\xinha\unsupported_plugins\BackgroundImage\backgrounds\thumbnails\blufur.jpg" />
+    <Content Include="Scripts\xinha\unsupported_plugins\BackgroundImage\backgrounds\thumbnails\palecnvs.jpg" />
+    <Content Include="Scripts\xinha\unsupported_plugins\BackgroundImage\backgrounds\thumbnails\ppplcnvs.jpg" />
+    <Content Include="Scripts\xinha\unsupported_plugins\BackgroundImage\backgrounds\thumbnails\ylwsand.jpg" />
+    <Content Include="Scripts\xinha\unsupported_plugins\BackgroundImage\backgrounds\ylwsand.jpg" />
+    <Content Include="Scripts\xinha\unsupported_plugins\BackgroundImage\dialog.html" />
+    <Content Include="Scripts\xinha\unsupported_plugins\BackgroundImage\img\ed_bgimage.gif" />
+    <Content Include="Scripts\xinha\unsupported_plugins\BackgroundImage\lang\de.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\BackgroundImage\lang\fr.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\BackgroundImage\lang\ja.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\BackgroundImage\lang\nb.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\BackgroundImage\lang\nl.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\BackgroundImage\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\ClientsideSpellcheck\ClientsideSpellcheck.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\ClientsideSpellcheck\img\clientside-spellcheck.gif" />
+    <Content Include="Scripts\xinha\unsupported_plugins\ClientsideSpellcheck\img\he-spell-check.gif" />
+    <Content Include="Scripts\xinha\unsupported_plugins\ClientsideSpellcheck\lang\de.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\ClientsideSpellcheck\lang\ja.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\ClientsideSpellcheck\lang\nb.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\ClientsideSpellcheck\lang\nl.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\ClientsideSpellcheck\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Filter\Filter.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Filter\filters\paragraph.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Filter\filters\word.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Filter\img\ed_filter.gif" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Filter\lang\ja.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Filter\lang\nl.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Filter\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\HtmlTidy\HtmlTidy.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\HtmlTidy\img\html-tidy.gif" />
+    <Content Include="Scripts\xinha\unsupported_plugins\HtmlTidy\lang\de.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\HtmlTidy\lang\fr.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\HtmlTidy\lang\ja.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\HtmlTidy\lang\nb.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\HtmlTidy\lang\nl.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\HtmlTidy\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertMarquee\img\ed_marquee.gif" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertMarquee\InsertMarquee.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertMarquee\lang\de.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertMarquee\lang\fr.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertMarquee\lang\it.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertMarquee\lang\ja.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertMarquee\lang\nb.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertMarquee\lang\nl.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertMarquee\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertMarquee\popups\insert_marquee.html" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertPicture\demo_pictures\bikerpeep.jpg" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertPicture\demo_pictures\wesnoth078.jpg" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertPicture\img\btn_open.gif" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertPicture\img\nopic.gif" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertPicture\InsertPicture.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertPicture\lang\de.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertPicture\lang\fr.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertPicture\lang\ja.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertPicture\lang\nb.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertPicture\lang\nl.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertPicture\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertPicture\lang\sv.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertPicture\viewpicture.html" />
+    <Content Include="Scripts\xinha\unsupported_plugins\NoteServer\img\note.gif" />
+    <Content Include="Scripts\xinha\unsupported_plugins\NoteServer\lang\de.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\NoteServer\lang\fr.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\NoteServer\lang\ja.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\NoteServer\lang\nb.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\NoteServer\lang\nl.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\NoteServer\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\NoteServer\NoteServer.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\NoteServer\popups\codenote.html" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Template\img\ed_template.gif" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Template\img\layout_01.gif" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Template\img\layout_02.gif" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Template\img\layout_03.gif" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Template\lang\de.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Template\lang\fr.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Template\lang\it.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Template\lang\ja.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Template\lang\nb.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Template\lang\nl.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Template\lang\pt_br.js" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Template\popups\template.html" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Template\template.css" />
+    <Content Include="Scripts\xinha\unsupported_plugins\Template\Template.js" />
+    <Content Include="Scripts\xinha\Xinha.css" />
+    <Content Include="Scripts\xinha\XinhaCore.js" />
+    <Content Include="Scripts\xinha\XinhaLoader.js" />
+    <Content Include="Scripts\xinha\XinhaLoader_readme.txt" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\xinha\contrib\.htaccess" />
+    <Content Include="Scripts\xinha\contrib\compress.bat" />
+    <Content Include="Scripts\xinha\contrib\compress.php" />
+    <Content Include="Scripts\xinha\contrib\compress_yui.php" />
+    <Content Include="Scripts\xinha\contrib\lc_merge_strings.php" />
+    <Content Include="Scripts\xinha\contrib\lc_parse_strings.php" />
+    <Content Include="Scripts\xinha\contrib\php-xinha.php" />
+    <Content Include="Scripts\xinha\examples\files\ext_example-dest.php" />
+    <Content Include="Scripts\xinha\examples\files\ext_example-menu.php" />
+    <Content Include="Scripts\xinha\iconsets\Crystal\LICENSE" />
+    <Content Include="Scripts\xinha\iconsets\Crystal\README" />
+    <Content Include="Scripts\xinha\iconsets\Tango\README" />
+    <Content Include="Scripts\xinha\images\tango\COPYING" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\backend.php" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\Classes\ExtendedFileManager.php" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\config.inc.php" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\demo_images\.htaccess" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\editor.php" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\editorFrame.php" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\images.php" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\manager.php" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\resizer.php" />
+    <Content Include="Scripts\xinha\plugins\ExtendedFileManager\thumbs.php" />
+    <Content Include="Scripts\xinha\plugins\FormOperations\formmail.php" />
+    <Content Include="Scripts\xinha\plugins\FormOperations\README" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\backend.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\Classes\Files.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\Classes\Flickr.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\Classes\GD.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\Classes\IM.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\Classes\ImageEditor.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\Classes\ImageManager.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\Classes\JSON.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\Classes\JSON_Compat.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\Classes\NetPBM.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\Classes\Thumbnail.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\Classes\Transform.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\config.inc.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\ddt.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\demo_images\.htaccess" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\demo_images\linux\.htaccess" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\editor.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\editorFrame.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\flickr.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\images.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\manager.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\resizer.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\thumbs.php" />
+    <Content Include="Scripts\xinha\plugins\ImageManager\youtube.php" />
+    <Content Include="Scripts\xinha\plugins\InsertSmiley\smileys\smileys.php" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet2\snippets.php" />
+    <Content Include="Scripts\xinha\plugins\InsertSnippet\snippets.php" />
+    <Content Include="Scripts\xinha\plugins\Linker\scan.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\backend.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\config.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.gitignore" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\config" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\description" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\HEAD" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\hooks\applypatch-msg.sample" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\hooks\commit-msg.sample" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\hooks\post-commit.sample" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\hooks\post-receive.sample" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\hooks\post-update.sample" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\hooks\pre-applypatch.sample" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\hooks\pre-commit.sample" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\hooks\pre-rebase.sample" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\hooks\prepare-commit-msg.sample" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\hooks\update.sample" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\index" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\info\exclude" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\logs\HEAD" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\logs\refs\heads\master" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\logs\refs\remotes\origin\HEAD" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\objects\pack\pack-8e5d79c4d24d3583562057e93c54585a34742a20.idx" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\objects\pack\pack-8e5d79c4d24d3583562057e93c54585a34742a20.pack" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\packed-refs" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\refs\heads\master" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\refs\remotes\origin\HEAD" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\getid3.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.archive.gzip.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.archive.szip.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.archive.tar.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.archive.zip.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio-video.asf.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio-video.flv.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio-video.mpeg.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio-video.nsv.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio-video.quicktime.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio-video.real.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio-video.riff.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio-video.swf.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.aac_adif.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.aac_adts.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.ac3.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.au.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.avr.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.bonk.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.dts.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.la.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.lpac.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.midi.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.monkey.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.mp3.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.mpc.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.mpc_old.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.optimfrog.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.rkau.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.shorten.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.tta.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.voc.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.vqf.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.wavpack.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.audio.xiph.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.graphic.bmp.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.graphic.gif.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.graphic.jpeg.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.graphic.pcd.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.graphic.png.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.graphic.tiff.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.lib.data_hash.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.lib.iconv_replacement.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.lib.image_size.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.misc.iso.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.tag.apetag.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.tag.id3v1.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.tag.id3v2.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Assets\getid3\module.tag.lyrics3.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\FileManager.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Image.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\MimeTypes.ini" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Backend\Upload.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Demos\manager.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\Demos\selectImage.php" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\LICENSE" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\package.yml" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\README.md" />
+    <Content Include="Scripts\xinha\plugins\MootoolsFileManager\README.DEVELOPERS" />
+    <Content Include="Scripts\xinha\plugins\PSServer\backend.php" />
+    <Content Include="Scripts\xinha\plugins\PSServer\config.inc.php" />
+    <Content Include="Scripts\xinha\plugins\PSServer\demo_images\.htaccess" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\aspell_setup.php" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\README" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\spell-check-logic.cgi" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\spell-check-logic.php" />
+    <Content Include="Scripts\xinha\plugins\SpellChecker\spell-check-savedicts.php" />
+    <Content Include="Scripts\xinha\plugins\SuperClean\tidy.php" />
+    <Content Include="Scripts\xinha\skins\inditreuse\README" />
+    <Content Include="Scripts\xinha\skins\titan\README" />
+    <Content Include="Scripts\xinha\unsupported_plugins\HtmlTidy\html-tidy-config.cfg" />
+    <Content Include="Scripts\xinha\unsupported_plugins\HtmlTidy\html-tidy-logic.php" />
+    <Content Include="Scripts\xinha\unsupported_plugins\HtmlTidy\README" />
+    <Content Include="Scripts\xinha\unsupported_plugins\InsertPicture\InsertPicture.php" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Survey\Create.cshtml" />
+    <Content Include="Views\Survey\Edit.cshtml" />
+    <Content Include="Views\Survey\Index.cshtml" />
+    <Content Include="Views\Survey\Review.cshtml" />
+    <Content Include="Views\Survey\ReviewAllInstances.cshtml" />
+    <Content Include="Views\Survey\ReviewInstance.cshtml" />
+    <Content Include="Views\Survey\Take.cshtml" />
+    <Content Include="Views\Survey\TakeASurvey.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\main\" />
+    <Folder Include="Content\shared_images\" />
+    <Folder Include="Scripts\xinha\modules\Gecko\lang\" />
+    <Folder Include="Scripts\xinha\plugins\CSS\lang\" />
+    <Folder Include="Scripts\xinha\plugins\HorizontalRule\img\" />
+    <Folder Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\branches\" />
+    <Folder Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\objects\info\" />
+    <Folder Include="Scripts\xinha\plugins\MootoolsFileManager\mootools-filemanager\.git\refs\tags\" />
+    <Folder Include="Scripts\xinha\plugins\PSServer\docs\" />
+    <Folder Include="Scripts\xinha\plugins\SpellChecker\personal_dicts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MVCSurvey.Infrastructure\MVCSurvey.Infrastructure.csproj">
+      <Project>{60639b0a-8399-49b1-8a00-c7301965e4f8}</Project>
+      <Name>MVCSurvey.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>22183</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:21734/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.7\tools\Microsoft.Bcl.Build.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
