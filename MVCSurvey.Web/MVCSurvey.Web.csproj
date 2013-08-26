@@ -234,6 +234,9 @@
     <Content Include="Scripts\jquery\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\survey\create.js" />
+    <Content Include="Scripts\survey\edit.js" />
+    <Content Include="Scripts\survey\take.js" />
     <Content Include="Scripts\xinha\compression_readme.txt" />
     <Content Include="Scripts\xinha\contrib\dojo_js_compressor.jar" />
     <Content Include="Scripts\xinha\contrib\test_server.py" />
