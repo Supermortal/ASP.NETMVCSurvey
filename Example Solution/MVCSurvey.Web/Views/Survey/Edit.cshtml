@@ -1,0 +1,234 @@
+﻿@model MVCSurvey.Infrastructure.Models.Survey.SurveyModel
+
+@{
+    ViewBag.Title = "Edit";
+
+    var index = 0;
+}
+
+<div class="survey-content survey-centered">
+    <h1 class="survey-h1">Edit Survey</h1>
+
+    <h3 class="survey-h3">@Model.Name</h3>
+    <input type="hidden" id="hidSurveyID" value="@Model.SurveyID" />
+
+    <table class="survey-centered" id="tblSurveyParameters">
+        <tr>
+            <th>Question</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (var m in Model.SurveyParameters)
+        {
+            <tr class="surveyParam" id="trSurveyParam@(index)">
+                <td>
+                    <input id="txtSurveyQuestion@(index)" type="text" value="@m.Key"/></td>
+                <td>
+                    <select id="selSurveyParamType@(index)">
+                        @foreach (var t in m.SurveyParamTypes)
+                        {
+                            if (t == m.Type)
+                            {
+                            <option selected>@t</option>
+                            }
+                            else
+                            {
+                            <option>@t</option>
+                            }
+                        }
+                    </select>
+                </td>
+                <td>
+                    <select id="selSurveyParamRequired@(index)">
+                        @foreach (var t in m.ParamRequiredChoices)
+                        {
+                            if (t.ToLower() == m.Required.ToString().ToLower())
+                            {
+                            <option selected>@t</option>
+                            }
+                            else
+                            {
+                            <option>@t</option>
+                            }
+                        }
+                    </select>
+                </td>
+                <td>
+                    <input class="surveyRemoveButton button-warning" type="button" value="Remove" id="btnRemove@(index)" />
+                </td>
+            </tr>
+
+                        index++;
+        }
+    </table>
+
+    <input class="button-user" type="button" value="Add Question" id="btnSurveyParamAdd" style="margin: 5px 0 0 5px;"/>
+
+    <br />
+    <hr />
+
+    <input type="button" value="Submit" id="btnSurveySubmit" />
+    <input type="button" id="btnSurveyCancel" value="Cancel" style="width: 70px"/>
+</div>
+
+@section styles
+{
+    @Styles.Render("~/Content/survey/bundle")
+}
+
+<script type="text/javascript">
+    if (!_surveyParamsCount || _surveyParamsCount == null) {
+        var _surveyParamsCount = parseInt('@(index)');
+    }
+
+    $(document).ready(function () {
+
+        $("#btnSurveyCancel").click(function () {
+            document.location.href = '@Url.Action("Index", "Survey")';
+        });
+
+        $(".surveyRemoveButton").click(function () {
+            var id = $(this).attr("id");
+            var index = id.substring(9);
+
+            $("#trSurveyParam" + index).remove();
+        });
+    });
+
+    $("#btnSurveyParamAdd").click(function () {
+        var table = $("#tblSurveyParameters");
+
+        var tr = document.createElement("tr");
+        $(tr).attr("id", "trSurveyParamHead" + _surveyParamsCount);
+
+        //var th = document.createElement("th");
+        //$(th).html("Question");
+        //$(tr).append(th);
+
+        //th = document.createElement("th");
+        //$(th).html("Type");
+        //$(tr).append(th);
+
+        //th = document.createElement("th");
+        //$(th).html("Required");
+        //$(tr).append(th);
+
+        //table.append(tr);
+
+        tr = document.createElement("tr");
+        $(tr).addClass("surveyParam");
+        $(tr).attr("id", "trSurveyParam" + _surveyParamsCount);
+
+        var td = document.createElement("td");
+        var txtSurveyName = document.createElement("input");
+        $(txtSurveyName).attr("type", "text");
+        $(txtSurveyName).attr("id", "txtSurveyQuestion" + _surveyParamsCount);
+        $(td).append(txtSurveyName);
+        $(tr).append(td);
+
+        td = document.createElement("td");
+        var typeSel = document.createElement("select");
+        $(typeSel).attr("id", "selSurveyParamType" + _surveyParamsCount);
+
+        var option = document.createElement("option");
+        $(option).html("Text");
+        $(typeSel).append(option);
+
+        option = document.createElement("option");
+        $(option).html("Number");
+        $(typeSel).append(option);
+
+        option = document.createElement("option");
+        $(option).html("Decimal Number");
+        $(typeSel).append(option);
+
+        option = document.createElement("option");
+        $(option).html("Currency");
+        $(typeSel).append(option);
+
+        option = document.createElement("option");
+        $(option).html("Date");
+        $(option).addClass("datepicker");
+        $(typeSel).append(option);
+
+        //option = document.createElement("option");
+        //$(option).html("Large Number");
+        //$(typeSel).append(option);
+
+        $(td).append(typeSel);
+        $(tr).append(td);
+
+        td = document.createElement("td");
+        var reqSel = document.createElement("select");
+        $(reqSel).attr("id", "selSurveyParamRequired" + _surveyParamsCount);
+
+        option = document.createElement("option");
+        $(option).html("False");
+        $(reqSel).append(option);
+
+        option = document.createElement("option");
+        $(option).html("True");
+        $(reqSel).append(option);
+
+        $(td).append(reqSel);
+        $(tr).append(td);
+
+        td = document.createElement("td");
+        var btnRemove = document.createElement("input");
+        $(btnRemove).attr("id", "btnRemove" + _surveyParamsCount);
+        $(btnRemove).attr("type", "button");
+        $(btnRemove).val("Remove");
+        $(btnRemove).click(function () {
+            var id = $(this).attr("id");
+            var index = id.substring(9);
+
+            $("#trSurveyParam" + index).remove();
+            //$("#trSurveyParamHead" + index).remove();
+        });
+
+        $(td).append(btnRemove);
+        $(tr).append(td);
+
+        $(table).append(tr);
+
+        _surveyParamsCount++;
+    });
+
+    $("#btnSurveySubmit").click(function () {
+        var postData = {};
+
+        postData.surveyModelId = $("#hidSurveyID").val();
+
+        postData.surveyParameters = [];
+
+        $(".surveyParam").each(function () {
+            var surveyParameter = {};
+            var children = $(this).children();
+
+            //$($(children... gets the td child of the row, and then the input/select child of the td
+            surveyParameter.Key = $($(children[0]).children()[0]).val();
+            surveyParameter.Type = $($(children[1]).children()[0]).val();
+            surveyParameter.Required = $($(children[2]).children()[0]).val();
+
+            postData.surveyParameters.push(surveyParameter);
+        });
+
+        $.ajax({
+            url: '@Url.Action("Edit", "Survey")',
+            type: 'POST',
+            contentType: 'application/json',
+            dataType: 'json',
+            data: JSON.stringify(postData),
+
+            success: function (d) {
+                document.location.href = '@Url.Action("Index", "Survey")';
+            },
+
+            error: function (error) {
+                console.error(error);
+            }
+        });
+    });
+</script>
