@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
   $("#btnSurveyCancel").click(function () {
-    document.location.href = '@Url.Action("Index", "Survey")';
+      document.location.href = _MVCSurvey_HelperObject.redirectUrl;
   });
 
   $("#btnRemove0").click(function () {

@@ -30,11 +30,6 @@ namespace MVCSurvey.Web.App_Start
                 "~/Scripts/xinha/XinhaCore.js",
                 "~/Scripts/xinha/my_config.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/survey").Include(
-                "~/Scripts/survey/take.js",
-                "~/Scripts/survey/edit.js",
-                "~/Scripts/survey/create.js"));
-
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/reset.css",
                 "~/Content/Site.css"));      
